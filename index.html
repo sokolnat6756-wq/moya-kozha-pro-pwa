@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#A94D70">
+  <meta name="description" content="МОЯ КОЖА PRO — простой помощник по ежедневным привычкам бережного ухода за кожей. Без регистрации и передачи данных.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Моя кожа">
+  <title>МОЯ КОЖА PRO — забота в каждом дне</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body data-theme="quartz">
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="header-top">
+        <button class="brand-button" type="button" data-route="home" aria-label="МОЯ КОЖА PRO — на главную">
+          <span class="brand-symbol" aria-hidden="true">✳</span>
+          <span class="brand-text">МОЯ КОЖА <strong>PRO</strong><small>ежедневная забота о себе</small></span>
+        </button>
+        <div class="theme-switch" role="group" aria-label="Тема оформления">
+          <button type="button" class="theme-option is-selected" data-theme-choice="quartz" aria-pressed="true">Розовый кварц</button>
+          <button type="button" class="theme-option" data-theme-choice="champagne" aria-pressed="false">Шампань</button>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Разделы приложения">
+        <button type="button" data-route="home" aria-current="page">Главная</button>
+        <button type="button" data-route="quiz">Анкета</button>
+        <button type="button" data-route="result">Моя карточка</button>
+        <button type="button" data-route="ritual">Уход</button>
+        <button type="button" data-route="diary">Дневник</button>
+      </nav>
+    </header>
+
+    <div id="storage-warning" class="notice notice-warning" role="alert" hidden>
+      Браузер не разрешил сохранить данные. Отметки могут исчезнуть после закрытия страницы. Пока можно выгрузить их кнопкой «Экспорт данных JSON».
+    </div>
+
+    <main id="main-content">
+      <!-- ГЛАВНАЯ -->
+      <section class="screen is-active" id="screen-home" aria-labelledby="home-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Твой уход. Твой ритм.</p>
+            <h1 id="home-title" tabindex="-1">Красота начинается<br>с заботы <em>о себе</em></h1>
+            <p class="hero-lead">Небольшие шаги каждый день — без сложных схем и лишнего давления. Найди комфортный ритуал ухода и наблюдай за своими ощущениями.</p>
+            <div class="button-row">
+              <button type="button" class="button button-primary" id="home-start">Подобрать мой уход <span aria-hidden="true">→</span></button>
+            </div>
+            <p class="hero-footnote">7 коротких вопросов · Без регистрации · Данные остаются на устройстве</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-halo art-halo-one"></div>
+            <div class="art-halo art-halo-two"></div>
+            <div class="art-stage"></div>
+            <div class="product product-jar"><div class="jar-lid"></div><div class="jar-body"><span>MOЯ<br>КОЖА</span><small>daily care</small></div></div>
+            <div class="product product-bottle"><div class="bottle-pump"></div><div class="bottle-neck"></div><div class="bottle-body"><span>PRO</span><small>care ritual</small></div></div>
+            <div class="art-spark art-spark-one">✳</div><div class="art-spark art-spark-two">✦</div>
+            <div class="art-caption">A MOMENT FOR YOURSELF</div>
+          </div>
+        </div>
+
+        <div class="section-heading home-heading">
+          <div><p class="eyebrow">ТВОЁ ПРОСТРАНСТВО</p><h2>С заботой — каждый день</h2></div>
+          <p>Выбери, с чего хочется начать сегодня.</p>
+        </div>
+        <div class="home-tiles">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">☼</div>
+            <h3>Утро и вечер</h3>
+            <p>Понятные шаги и маленькие галочки, которые помогают поддерживать привычку.</p>
+            <button type="button" class="text-button" data-route="ritual">Открыть ритуал <span aria-hidden="true">↗</span></button>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">✎</div>
+            <h3>Дневник 30 дней</h3>
+            <p>Отмечай ощущения и сохраняй заметку о своём дне — без оценок и диагнозов.</p>
+            <button type="button" class="text-button" data-route="diary">Открыть дневник <span aria-hidden="true">↗</span></button>
+          </article>
+          <article class="feature-card feature-card-highlight">
+            <div class="feature-icon" aria-hidden="true">♡</div>
+            <h3>Твоя карточка</h3>
+            <p id="home-result-description">Ответь на вопросы и получи сценарий базового ухода под свои предпочтения.</p>
+            <button type="button" class="text-button" data-route="result">Посмотреть карточку <span aria-hidden="true">↗</span></button>
+          </article>
+        </div>
+
+        <section class="data-panel" aria-labelledby="data-title">
+          <div class="data-panel-copy">
+            <p class="eyebrow">ПРИВАТНОСТЬ</p>
+            <h2 id="data-title">Твои записи — только твои</h2>
+            <p>Ответы, ежедневные отметки и заметки хранятся в этом браузере через localStorage. Они не отправляются в интернет. Очистка данных браузера может удалить записи; для сохранения копии используй экспорт.</p>
+          </div>
+          <div class="data-actions">
+            <button class="button button-outline" type="button" id="export-data">Экспорт данных JSON</button>
+            <button class="button button-danger" type="button" id="delete-data">Удалить мои данные</button>
+          </div>
+        </section>
+      </section>
+
+      <!-- АНКЕТА -->
+      <section class="screen" id="screen-quiz" aria-labelledby="quiz-title" hidden>
+        <div class="inner-header"><p class="eyebrow">ЗНАКОМСТВО С СОБОЙ</p><h1 id="quiz-title" tabindex="-1">Найдём твой ритм ухода</h1><p>Семь простых вопросов об ощущениях и привычках. Здесь нет правильных или неправильных ответов.</p></div>
+        <div class="panel quiz-panel">
+          <div class="quiz-meta"><span id="quiz-step-text">Вопрос 1 из 7</span><span>Только о привычках и предпочтениях</span></div>
+          <div class="progress-track" id="quiz-progress" role="progressbar" aria-label="Прогресс анкеты" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1"><div class="progress-fill" id="quiz-progress-fill"></div></div>
+          <h2 id="question-title" class="question-title" tabindex="-1">Вопрос</h2>
+          <p id="question-hint" class="question-hint"></p>
+          <fieldset id="quiz-choices" class="quiz-choices"><legend class="visually-hidden">Выберите один вариант ответа</legend></fieldset>
+          <div class="quiz-footer"><button type="button" class="button button-outline" id="quiz-back">← Назад</button><button type="button" class="button button-primary" id="quiz-next" disabled>Далее →</button></div>
+        </div>
+      </section>
+
+      <!-- РЕЗУЛЬТАТ -->
+      <section class="screen" id="screen-result" aria-labelledby="result-title" hidden>
+        <div class="inner-header"><p class="eyebrow">ТВОЯ КАРТОЧКА</p><h1 id="result-title" tabindex="-1">Уход, который подходит твоему ритму</h1><p>Не диагноз и не оценка кожи: только базовые идеи с учётом твоих ответов.</p></div>
+        <div id="result-empty" class="panel empty-state">
+          <span class="empty-icon" aria-hidden="true">✳</span><h2>Карточка пока не готова</h2><p>Ответь на 7 вопросов — и мы подберём один из четырёх сценариев бережного ухода.</p><button class="button button-primary" type="button" id="result-start">Пройти анкету →</button>
+        </div>
+        <div id="result-content" hidden>
+          <div class="result-feature panel"><p class="eyebrow">ТВОЙ СЦЕНАРИЙ</p><div class="result-feature-body"><div><h2 id="scenario-title"></h2><p id="scenario-description"></p></div><div class="result-medallion" aria-hidden="true">♡</div></div></div>
+          <div class="result-grid">
+            <article class="panel result-steps"><p class="eyebrow">01 / УТРО</p><h3>Мягкое начало дня</h3><ol><li>Деликатное очищение по потребности: без ощущения, что кожу нужно «отмыть до скрипа».</li><li>Увлажняющее средство, которое комфортно по текстуре.</li><li>Солнцезащитное средство SPF 30+ как часть утреннего ухода; на улице обновляй по инструкции на упаковке.</li></ol></article>
+            <article class="panel result-steps"><p class="eyebrow">02 / ВЕЧЕР</p><h3>Спокойное завершение</h3><ol><li>Бережное очищение кожи, особенно если днём использовались косметика или SPF.</li><li>Комфортное увлажнение без лишних дополнительных шагов.</li></ol></article>
+          </div>
+          <article class="panel result-tips"><p class="eyebrow">ПО ТВОИМ ОТВЕТАМ</p><h3>На что обратить внимание</h3><ul id="personal-tips"></ul></article>
+          <div class="result-actions"><button type="button" class="button button-primary" data-route="ritual">Перейти к ритуалу →</button><button type="button" class="button button-outline" id="retake-quiz">Перепройти анкету</button></div>
+          <p class="disclaimer">Рекомендации носят общий информационный характер, не предназначены для диагностики или лечения и не заменяют консультацию дерматолога.</p>
+        </div>
+      </section>
+
+      <!-- РИТУАЛЫ -->
+      <section class="screen" id="screen-ritual" aria-labelledby="ritual-title" hidden>
+        <div class="inner-header"><p class="eyebrow">КАЖДЫЙ ДЕНЬ</p><h1 id="ritual-title" tabindex="-1">Ритуал заботы о себе</h1><p>Отмечай выполненные шаги — пусть забота станет спокойной привычкой.</p></div>
+        <div class="date-toolbar panel"><div><label for="ritual-date">Дата ухода</label><input type="date" id="ritual-date" aria-describedby="ritual-date-help"><small id="ritual-date-help">Выбери сегодняшний или прошедший день</small></div><button type="button" class="button button-outline button-small" id="ritual-today">Сегодня</button></div>
+        <div class="ritual-grid">
+          <article class="panel ritual-card"><div class="ritual-card-header"><span class="ritual-icon" aria-hidden="true">☀</span><div><p class="eyebrow">УТРЕННИЙ УХОД</p><h2>Доброе утро</h2></div></div><p class="ritual-intro">Нежно начни день — в своём темпе.</p><div class="ritual-checks" id="morning-checks"></div><p class="ritual-counter" id="morning-counter"></p></article>
+          <article class="panel ritual-card"><div class="ritual-card-header"><span class="ritual-icon" aria-hidden="true">☾</span><div><p class="eyebrow">ВЕЧЕРНИЙ УХОД</p><h2>Тихий вечер</h2></div></div><p class="ritual-intro">Пара минут, чтобы завершить день с заботой.</p><div class="ritual-checks" id="evening-checks"></div><p class="ritual-counter" id="evening-counter"></p></article>
+        </div>
+        <p class="disclaimer">Если средство вызывает неприятные ощущения, не нужно продолжать его использовать. При стойких вопросах по коже обратись к дерматологу.</p>
+      </section>
+
+      <!-- ДНЕВНИК -->
+      <section class="screen" id="screen-diary" aria-labelledby="diary-title" hidden>
+        <div class="inner-header"><p class="eyebrow">МОЙ ДНЕВНИК</p><h1 id="diary-title" tabindex="-1">30 дней маленьких открытий</h1><p>Наблюдай за ощущениями, замечай комфорт и сохраняй одну небольшую мысль о дне.</p></div>
+        <div class="panel diary-progress"><div><p class="eyebrow">ТВОЙ ПУТЬ</p><h2><span id="diary-completed">0</span><span class="subtle-count"> / 30 дней с отметкой</span></h2></div><div class="progress-track" role="progressbar" id="diary-progress" aria-label="Прогресс дневника" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0"><div class="progress-fill" id="diary-progress-fill"></div></div><p class="small-muted" id="diary-period"></p></div>
+        <div class="diary-layout">
+          <div class="panel diary-calendar-panel"><div class="calendar-heading"><h2>Календарь</h2><span class="calendar-legend"><span aria-hidden="true" class="legend-dot"></span> есть отметка</span></div><div class="calendar-grid" id="diary-calendar" aria-label="Календарь на 30 дней"></div><p class="small-muted">Будущие дни откроются по мере наступления дат. День считается заполненным после выбора ощущения.</p></div>
+          <div class="panel diary-entry-panel"><p class="eyebrow" id="diary-day-number">ДЕНЬ 1</p><h2 id="diary-selected-date">Сегодня</h2><fieldset class="mood-fieldset"><legend>Как ты сегодня себя ощущаешь?</legend><div class="mood-grid"><label class="mood-option"><input type="radio" name="diary-mood" value="comfortable"><span>☺</span>Комфортно</label><label class="mood-option"><input type="radio" name="diary-mood" value="tight"><span>◡</span>Стянутость</label><label class="mood-option"><input type="radio" name="diary-mood" value="dry"><span>✧</span>Сухость</label><label class="mood-option"><input type="radio" name="diary-mood" value="different"><span>○</span>Другие ощущения</label></div></fieldset><label class="note-label" for="diary-note">Заметка о дне <span>(необязательно)</span></label><textarea id="diary-note" rows="5" maxlength="280" placeholder="Что было комфортным сегодня?" aria-describedby="note-counter"></textarea><div class="note-footer"><span class="small-muted" id="diary-save-status" role="status" aria-live="polite">Изменения сохраняются на устройстве</span><span class="small-muted" id="note-counter">0 / 280</span></div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>МОЯ КОЖА PRO <span aria-hidden="true">✳</span></span><p>Бережные привычки, а не медицинская диагностика. Все записи остаются в твоём браузере.</p></footer>
+  </div>
+  <div class="toast" id="app-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+  <script>
+    // PWA работает на HTTPS (GitHub Pages) и localhost; при file:// не регистрируем.
+    if ('serviceWorker' in navigator &&
+        (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js', { scope: './' })
+          .catch((error) => console.warn('Не удалось включить офлайн-режим:', error));
+      });
+    }
+  </script>
+</body>
+</html>

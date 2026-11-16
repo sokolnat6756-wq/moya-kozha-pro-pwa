@@ -1,0 +1,22 @@
+{
+  "name": "МОЯ КОЖА PRO",
+  "short_name": "Моя кожа",
+  "lang": "ru",
+  "display": "standalone",
+  "start_url": "./",
+  "scope": "./",
+  "theme_color": "#A94D70",
+  "background_color": "#FFFAF9",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
